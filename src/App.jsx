@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getAllCountries } from './services/countryApi'
 import CountryCard from './components/CountryCard'
+import Header from './components/Header'
 import './App.css'
 
 function App() {
@@ -30,6 +31,8 @@ function App() {
   if (error) return <p>{error}</p>
 
   return (
+    <>
+      <Header />
     <div className="app">
       <h1>CountryInfo</h1>
       <input
@@ -45,6 +48,7 @@ function App() {
         ))}
       </div>
     </div>
+    </>
   )
 }
 
