@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './CountryCard.css'
 
 function CountryCard({ country }) {
@@ -5,7 +6,7 @@ function CountryCard({ country }) {
   const population = country.population?.toLocaleString() ?? 'N/A'
 
   return (
-    <div className="card">
+    <Link to={`/country/${encodeURIComponent(country.name.common)}`} className="card">
       <img src={country.flags?.svg} alt={`Flagga för ${country.name.common}`} />
       <div className="card-body">
         <h3>{country.name.common}</h3>
@@ -13,7 +14,7 @@ function CountryCard({ country }) {
         <p><strong>Region:</strong> {country.region}</p>
         <p><strong>Befolkning:</strong> {population}</p>
       </div>
-    </div>
+    </Link>
   )
 }
 
