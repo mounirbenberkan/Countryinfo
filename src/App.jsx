@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { getAllCountries } from './services/countryApi'
+import CountryCard from './components/CountryCard'
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -26,11 +27,11 @@ function App() {
     <div>
       <h1>CountryInfo</h1>
       <p>{countries.length} länder hittade</p>
-      <ul>
+      <div>
         {countries.map((country) => (
-          <li key={country.name.common}>{country.name.common}</li>
+          <CountryCard key={country.name.common} country={country} />
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
