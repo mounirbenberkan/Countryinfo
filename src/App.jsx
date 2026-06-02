@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getAllCountries } from './services/countryApi'
 import CountryCard from './components/CountryCard'
+import './App.css'
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -29,7 +30,7 @@ function App() {
   if (error) return <p>{error}</p>
 
   return (
-    <div>
+    <div className="app">
       <h1>CountryInfo</h1>
       <input
         type="text"
@@ -37,8 +38,8 @@ function App() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <p>{filtered.length} länder hittade</p>
-      <div>
+      <p className="count">{filtered.length} länder hittade</p>
+      <div className="grid">
         {filtered.map((country) => (
           <CountryCard key={country.name.common} country={country} />
         ))}
