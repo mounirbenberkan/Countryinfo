@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { getAllCountries } from './services/countryApi'
 import CountryCard from './components/CountryCard'
 import Header from './components/Header'
+import Favorites from './pages/Favorites'
+import Wishlist from './pages/Wishlist'
 import './App.css'
 
-function App() {
+function Home() {
   const [countries, setCountries] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -31,23 +34,40 @@ function App() {
   if (error) return <p>{error}</p>
 
   return (
-    <>
-      <Header />
     <div className="app">
       <h1>CountryInfo</h1>
+
       <input
         type="text"
         placeholder="Sök efter ett land..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+
       <p className="count">{filtered.length} länder hittade</p>
+
       <div className="grid">
         {filtered.map((country) => (
-          <CountryCard key={country.name.common} country={country} />
+          <CountryCard
+            key={country.cca3 || country.name.common}
+            country={country}
+          />
         ))}
       </div>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+      </Routes>
     </>
   )
 }
