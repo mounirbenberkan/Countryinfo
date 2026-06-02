@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { getAllCountries } from './services/countryApi'
 
 function App() {
   const [countries, setCountries] = useState([])
@@ -6,8 +7,7 @@ function App() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch('https://restcountries.com/v3.1/all?fields=name,flags,capital,region,population')
-      .then((res) => res.json())
+    getAllCountries()
       .then((data) => {
         console.log('Länder hämtade:', data.length)
         setCountries(data)
