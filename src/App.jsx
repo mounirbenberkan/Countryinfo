@@ -6,6 +6,7 @@ function App() {
   const [countries, setCountries] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     getAllCountries()
@@ -20,15 +21,25 @@ function App() {
       .finally(() => setLoading(false))
   }, [])
 
+  const filtered = countries.filter((country) =>
+    country.name.common.toLowerCase().includes(search.toLowerCase())
+  )
+
   if (loading) return <p>Laddar...</p>
   if (error) return <p>{error}</p>
 
   return (
     <div>
       <h1>CountryInfo</h1>
-      <p>{countries.length} länder hittade</p>
+      <input
+        type="text"
+        placeholder="Sök efter ett land..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <p>{filtered.length} länder hittade</p>
       <div>
-        {countries.map((country) => (
+        {filtered.map((country) => (
           <CountryCard key={country.name.common} country={country} />
         ))}
       </div>
