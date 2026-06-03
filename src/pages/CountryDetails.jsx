@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getCountryByName } from '../services/countryApi'
 import './CountryDetails.css'
+import WeatherCard from './WeatherCard'
 
 // Räknar ut tidsskillnad mot svensk tid (dynamisk, tar hänsyn till sommartid)
 function getTimeDiffFromSweden(timezone) {
@@ -70,6 +71,7 @@ function CountryDetails() {
           </div>
         </div>
       </div>
+        <WeatherCard country={country} />
     </div>
   )
 }
