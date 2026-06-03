@@ -1,25 +1,30 @@
 .controls {
   display: flex;
-  gap: 16px;
   align-items: center;
-  margin-bottom: 16px;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.controls input,
+.controls select {
+  height: 52px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.controls input {
+  width: 420px;
+  padding: 0 1rem;
 }
 
 .controls select {
-  padding: 10px 16px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: #fff;
-  cursor: pointer;
+  width: 180px;
+  padding: 0 0.75rem;
 }
-
-.controls select:focus {
-  outline: none;
-  border-color: #555;
-}
-
 .regions {
   display: flex;
   gap: 8px;
