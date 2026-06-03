@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 16px 32px;
   background: #fff;
   border-bottom: 1px solid #e0e0e0;
   position: sticky;
@@ -11,20 +11,21 @@
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 19px;
   font-weight: 700;
   color: #222;
+  text-decoration: none;
 }
 
 nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 24px;
 }
 
 nav a {
   text-decoration: none;
   color: #555;
-  font-size: 0.95rem;
+  font-size: 15px;
   font-weight: 500;
 }
 
