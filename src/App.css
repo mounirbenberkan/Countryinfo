@@ -194,3 +194,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+.compare-search select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
