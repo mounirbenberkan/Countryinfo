@@ -12,8 +12,8 @@ Built by Ammar Imeri, Leif Rasoul and Mounir Benberkan as a project.
 - Travel quiz game where you guess the country from its flag
 - Weather info for the country's capital
 
-**What tech was used:
-**React
+**What tech was used:**
+React
 Vite
 React Router
 CSS Modules / plain CSS
@@ -43,17 +43,17 @@ Vue docs https://vuejs.org/guide/introduction
 Angular docs https://angular.dev/overview
 
 **Installation**
-git clone https://github.com/mounirbenberkan/Countryinfo
 
+git clone https://github.com/mounirbenberkan/Countryinfo
 cd Countryinfo
 npm install
 npm run dev
 
-If you want weather to work, create a .env file in the root:
+**If you want weather to work, create a .env file in the root:**
 
 VITE_WEATHER_API_KEY=your_key_here
 
-How to get your API key from WeatherAPI
+**How to get your API key from WeatherAPI**
 1. Visit https://openweathermap.org
 2. Create an account and navigate to API keys
 3. Copy KEY and paste into a .env file in the root folder with VITE_WEATHER_API_KEY=your_key_here
