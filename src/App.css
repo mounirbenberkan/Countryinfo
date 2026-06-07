@@ -42,3 +42,168 @@
   color: #555;
   font-size: 1rem;
 }
+
+.quiz {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.quiz h2 {
+  margin-bottom: 1rem;
+}
+
+.quiz-flag {
+  width: 260px;
+  max-width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin: 1.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-option,
+.quiz button {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #f8f8f8;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.quiz-option:hover:not(:disabled),
+.quiz button:hover {
+  background: #eeeeee;
+}
+
+.quiz-option.correct {
+  background: #d7f5df;
+  border-color: #37a357;
+}
+
+.quiz-option.wrong {
+  background: #ffdada;
+  border-color: #d9534f;
+}
+
+.quiz-option:disabled {
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.page-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.page-buttons button {
+  padding: 0.7rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.page-buttons button:hover {
+  background: #eeeeee;
+}
+
+.compare-page {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.compare-page h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.compare-page > p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.compare-search {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.compare-search label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.compare-search input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.compare-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+}
+
+.compare-card.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #777;
+}
+
+.compare-flag {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+  .compare-search,
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.compare-search select {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}

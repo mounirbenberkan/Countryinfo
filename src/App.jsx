@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import CountryDetails from './pages/CountryDetails'
 import Favorites from './pages/Favorites'
 import Wishlist from './pages/Wishlist'
+import Quiz from './pages/Quiz'
+import Compare from './pages/Compare'
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/country/:name" element={<CountryDetails />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/compare" element={<Compare />} />
       </Routes>
     </>
   )
