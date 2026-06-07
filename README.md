@@ -36,10 +36,15 @@ Vue was a close alternative. It has a gentler learning curve and a more structur
 Angular was ruled out early. It is a full framework rather than a library and brings a lot of complexity with TypeScript by default, decorators, dependency injection and a steep learning curve. Angular makes sense for large enterprise applications where that structure pays off, but we didn't feel like it would in our project.
 
 **References:**
+
 State of JS 2023 https://2023.stateofjs.com/en-US/libraries/front-end-frameworks
+
 ThoughtWorks Technology Radar https://www.thoughtworks.com/radar/languages-and-frameworks/react-js
+
 React docs https://react.dev
+
 Vue docs https://vuejs.org/guide/introduction
+
 Angular docs https://angular.dev/overview
 
 **Installation**
