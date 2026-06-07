@@ -43,6 +43,36 @@
   font-size: 1rem;
 }
 
+@media (max-width: 768px) {
+  .app {
+    padding: 16px 12px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .app input {
+    max-width: 100%;
+  }
+
+  .compare-page {
+    padding: 1rem;
+  }
+
+  .quiz {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+
 .quiz {
   max-width: 700px;
   margin: 2rem auto;
