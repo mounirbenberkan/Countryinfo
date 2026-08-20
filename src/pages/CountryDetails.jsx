@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { getCountryByName } from '../services/countryApi'
 import './CountryDetails.css'
 import WeatherCard from './WeatherCard'
@@ -47,31 +48,36 @@ function CountryDetails() {
     <div className="details-page">
       <button className="back-btn" onClick={() => navigate(-1)}>← Tillbaka</button>
 
-      <div className="details-content">
+      <motion.div
+        className="details-header"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
+      >
         <img src={country.flags?.svg} alt={`Flagga för ${country.name.common}`} />
+        <h1>{country.name.common}</h1>
+        <p className="official">{country.name.official}</p>
+      </motion.div>
 
-        <div className="details-info">
-          <h1>{country.name.common}</h1>
-          <p className="official">{country.name.official}</p>
-
-          <div className="details-grid">
-            <p><strong>Huvudstad:</strong> {country.capital?.[0] ?? 'N/A'}</p>
-            <p><strong>Region:</strong> {country.region}</p>
-            <p><strong>Befolkning:</strong> {country.population?.toLocaleString()}</p>
-            <p><strong>Språk:</strong> {languages}</p>
-            <p><strong>Valuta:</strong> {currencies}</p>
-            <p>
-              <strong>Tidszon:</strong> {country.timezones?.[0] ?? 'N/A'}
-              {country.timezones?.[0] && (
-                <span style={{ color: '#888', marginLeft: '0.5rem', fontSize: '0.85rem' }}>
-                  ({getTimeDiffFromSweden(country.timezones[0])})
-                </span>
-              )}
-            </p>
-          </div>
+      <div className="details-body">
+        <div className="details-grid">
+          <p><strong>Huvudstad:</strong> {country.capital?.[0] ?? 'N/A'}</p>
+          <p><strong>Region:</strong> {country.region}</p>
+          <p><strong>Befolkning:</strong> {country.population?.toLocaleString()}</p>
+          <p><strong>Språk:</strong> {languages}</p>
+          <p><strong>Valuta:</strong> {currencies}</p>
+          <p>
+            <strong>Tidszon:</strong> {country.timezones?.[0] ?? 'N/A'}
+            {country.timezones?.[0] && (
+              <span style={{ color: '#888', marginLeft: '0.5rem', fontSize: '0.85rem' }}>
+                ({getTimeDiffFromSweden(country.timezones[0])})
+              </span>
+            )}
+          </p>
         </div>
-      </div>
+
         <WeatherCard country={country} />
+      </div>
     </div>
   )
 }

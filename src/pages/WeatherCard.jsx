@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 function WeatherCard({ country }) {
   const [weather, setWeather] = useState(null)
@@ -49,27 +50,34 @@ function WeatherCard({ country }) {
   }
 
   return (
-    <div className="weather-card">
+    <motion.div
+      className="weather-card"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+    >
       <h3>Väder i {capital}</h3>
 
-      <p className="weather-temp">
-        {Math.round(weather.main.temp)}°C
-      </p>
+      <div className="weather-main">
+        <span className="weather-temp">{Math.round(weather.main.temp)}°C</span>
+        <span className="weather-desc">{weather.weather[0].description}</span>
+      </div>
 
-      <p>{weather.weather[0].description}</p>
-
-      <p>
-        <strong>Känns som:</strong> {Math.round(weather.main.feels_like)}°C
-      </p>
-
-      <p>
-        <strong>Luftfuktighet:</strong> {weather.main.humidity}%
-      </p>
-
-      <p>
-        <strong>Vind:</strong> {weather.wind.speed} m/s
-      </p>
-    </div>
+      <div className="weather-stats">
+        <div>
+          <span>Känns som</span>
+          <strong>{Math.round(weather.main.feels_like)}°C</strong>
+        </div>
+        <div>
+          <span>Luftfuktighet</span>
+          <strong>{weather.main.humidity}%</strong>
+        </div>
+        <div>
+          <span>Vind</span>
+          <strong>{weather.wind.speed} m/s</strong>
+        </div>
+      </div>
+    </motion.div>
   )
 }
 
