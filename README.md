@@ -16,12 +16,13 @@ Built by Ammar Imeri, Leif Rasoul and Mounir Benberkan as a project.
 React
 Vite
 React Router
+Framer Motion
 CSS Modules / plain CSS
 localStorage
 
 **APIs**
 REST Countries https://restcountries.com
-Main data source. Provides flag, capital, region, population, languages, currencies, timezones and neighboring countries.
+Main data source. Provides flag, capital, region, population, languages, currencies, timezones and neighboring countries. Requires an API key stored in .env as VITE_REST_COUNTRIES_KEY.
 
 OpenWeatherMap https://openweathermap.org
 Used for current weather in the country's capital. Requires an API key stored in .env as VITE_WEATHER_API_KEY.
@@ -54,8 +55,9 @@ cd Countryinfo
 npm install
 npm run dev
 
-**If you want weather to work, create a .env file in the root:**
+**Create a .env file in the root with your API keys:**
 
+VITE_REST_COUNTRIES_KEY=your_key_here
 VITE_WEATHER_API_KEY=your_key_here
 
 **How to get your API key from WeatherAPI**
