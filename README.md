@@ -58,6 +58,7 @@ npm run dev
 **Create a .env file in the root with your API keys:**
 
 VITE_REST_COUNTRIES_KEY=your_key_here
+
 VITE_WEATHER_API_KEY=your_key_here
 
 **How to get your API key from WeatherAPI**
