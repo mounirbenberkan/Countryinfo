@@ -65,3 +65,8 @@ VITE_WEATHER_API_KEY=your_key_here
 1. Visit https://openweathermap.org
 2. Create an account and navigate to API keys
 3. Copy KEY and paste into a .env file in the root folder with VITE_WEATHER_API_KEY=your_key_here
+
+**How to get your API key from REST Countries**
+1. Visit https://restcountries.com
+2. Create an account and create an API key
+3. Copy KEY and paste into a .env file in the root folder with VITE_REST_COUNTRIES_KEY=your_key_here
